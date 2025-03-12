@@ -20,10 +20,21 @@ public class Server {
         } catch (IOException e) {
             System.out.println("Erro ao criar o servidor");
             e.printStackTrace();
+            fecharTudo(socket, bufferedReader, bufferedWriter);
         }
     }
 
-
+    public void enviarMensagemCliente(String mensagem) {
+        try {
+            bufferedWriter.write(mensagem);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            System.out.println("Erro ao enviar mensagem para o cliente");
+            e.printStackTrace();
+            fecharTudo(socket, bufferedReader, bufferedWriter);
+        }
+    }
 
     public void fecharTudo(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
         try {
