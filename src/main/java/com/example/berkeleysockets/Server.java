@@ -25,5 +25,20 @@ public class Server {
 
 
 
-
+    public void fecharTudo(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
+        try {
+            if(bufferedReader != null) {
+                bufferedReader.close();
+            }
+            if(bufferedWriter != null) {
+                bufferedWriter.close();
+            }
+            if(socket != null) {
+                socket.close();
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao fechar o servidor");
+            e.printStackTrace();
+        }
+    }
 }
