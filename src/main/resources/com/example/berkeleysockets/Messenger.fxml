@@ -20,7 +20,7 @@
         <VBox fx:id="vboxMensagens" prefHeight="248" prefWidth="412"/>
       </content>
     </ScrollPane>
-    <Label layoutX="114" layoutY="36" text="Mensagens">
+    <Label layoutX="114" layoutY="36" text="Mensagens Servidor">
       <font>
         <Font name="Arial Rounded MT Bold" size="23"/>
       </font>

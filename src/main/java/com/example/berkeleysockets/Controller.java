@@ -54,7 +54,7 @@ public class Controller implements Initializable {
             }
         });
 
-        server.receberMensagemCliente(vboxMensagens);
+        server.receberMensagensCliente(vboxMensagens);
 
         botaoEnviar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -68,8 +68,8 @@ public class Controller implements Initializable {
                     Text texto = new Text(mensagemEnviar);
                     TextFlow textFlow = new TextFlow(texto);
 
-                    textFlow.setStyle("-fx-color: rgb(239, 242, 255)" +
-                            "-fx-background-color: rgb(15, 125, 252)" +
+                    textFlow.setStyle("-fx-color: rgb(239, 242, 255);" +
+                            "-fx-background-color: rgb(15, 125, 252);" +
                             "-fx-background-radius: 20px"
                     );
                     textFlow.setPadding(new Insets(5, 10, 5, 10));
@@ -84,7 +84,8 @@ public class Controller implements Initializable {
             }
         });
     }
-    public static void adicionarLabel(String mensagemCliente, VBox vbox) {
+
+    public static void adicionarLabel(String mensagemCliente, VBox vBox) {
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_LEFT);
         hBox.setPadding(new Insets(5, 10, 5, 5));
@@ -93,7 +94,7 @@ public class Controller implements Initializable {
         TextFlow textFlow = new TextFlow(texto);
 
         textFlow.setStyle(
-                "-fx-background-color: rgb(233, 233, 235)" +
+                "-fx-background-color: rgb(233, 233, 235);" +
                 "-fx-background-radius: 20px"
         );
         textFlow.setPadding(new Insets(5, 10, 5, 10));
@@ -102,7 +103,7 @@ public class Controller implements Initializable {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                vbox.getChildren().add(hBox);
+                vBox.getChildren().add(hBox);
             }
         });
     }
