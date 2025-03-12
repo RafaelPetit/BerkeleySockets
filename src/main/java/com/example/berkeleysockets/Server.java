@@ -26,9 +26,9 @@ public class Server {
         }
     }
 
-    public void enviarMensagemCliente(String mensagem) {
+    public void enviarMensagemCliente(String mensagemCliente) {
         try {
-            bufferedWriter.write(mensagem);
+            bufferedWriter.write(mensagemCliente);
             bufferedWriter.newLine();
             bufferedWriter.flush();
         } catch (IOException e) {
@@ -38,14 +38,14 @@ public class Server {
         }
     }
 
-    public void receberMensagensCliente(VBox vboxMensagens) {
+    public void receberMensagensCliente(VBox vboxMensagem) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (socket.isConnected()) {
                     try {
                         String mensagemCliente = bufferedReader.readLine();
-                        Controller.adicionarLabel(mensagemCliente, vboxMensagens);
+                        Controller.adicionarLabel(mensagemCliente, vboxMensagem);
                     } catch (IOException e) {
                         e.printStackTrace();
                         System.out.println("Erro ao receber mensagem do cliente");
